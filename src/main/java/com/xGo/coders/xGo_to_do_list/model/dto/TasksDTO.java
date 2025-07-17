@@ -13,6 +13,5 @@ public class TasksDTO {
     private Long id;
     private String title;
     private LocalDateTime creationDate;
-
-
+    private String description;
 }
