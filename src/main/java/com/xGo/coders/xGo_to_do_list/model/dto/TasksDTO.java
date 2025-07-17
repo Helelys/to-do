@@ -1,14 +1,12 @@
 package com.xGo.coders.xGo_to_do_list.model.dto;
 
 import com.xGo.coders.xGo_to_do_list.model.entity.Tasks;
-import lombok.Getter;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @RequiredArgsConstructor
 public class TasksDTO {
     private Long id;
