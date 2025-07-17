@@ -22,6 +22,6 @@ public class Tasks {
     @NotNull(message = "Title cannot be empty")
     private String title;
     private String description;
-    private boolean finished;
+    private boolean finished = false;
     private LocalDateTime creationDate;
 }
