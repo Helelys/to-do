@@ -3,6 +3,7 @@ package com.xGo.coders.xGo_to_do_list.controller;
 import com.xGo.coders.xGo_to_do_list.model.dto.TasksDTO;
 import com.xGo.coders.xGo_to_do_list.model.entity.Tasks;
 import com.xGo.coders.xGo_to_do_list.services.TaksGet;
+import com.xGo.coders.xGo_to_do_list.services.TaskDelete;
 import com.xGo.coders.xGo_to_do_list.services.TasksPost;
 import com.xGo.coders.xGo_to_do_list.services.TasksPut;
 import lombok.RequiredArgsConstructor;
@@ -41,5 +42,13 @@ public class Controller {
     @PutMapping("/tasks/{id}")
     public ResponseEntity<TasksDTO> editTask(@PathVariable Long id, @RequestBody TasksDTO dto) {
         return ResponseEntity.ok(TasksPut.editTask(id, dto));
+    }
+
+    private final TaskDelete tasksDelete;
+
+    @DeleteMapping("/tasks/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
+        tasksDelete.deleteTask(id);
+        return ResponseEntity.noContent().build();
     }
 }
