@@ -4,6 +4,7 @@ import com.xGo.coders.xGo_to_do_list.model.dto.TasksDTO;
 import com.xGo.coders.xGo_to_do_list.model.entity.Tasks;
 import com.xGo.coders.xGo_to_do_list.services.TaksGet;
 import com.xGo.coders.xGo_to_do_list.services.TasksPost;
+import com.xGo.coders.xGo_to_do_list.services.TasksPut;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +35,11 @@ public class Controller {
         Tasks convertedTask = tasksPost.postTask(dto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(convertedTask.toDTO());
+    }
+
+    private final TasksPut TasksPut;
+    @PutMapping("/tasks/{id}")
+    public ResponseEntity<TasksDTO> editTask(@PathVariable Long id, @RequestBody TasksDTO dto) {
+        return ResponseEntity.ok(TasksPut.editTask(id, dto));
     }
 }
