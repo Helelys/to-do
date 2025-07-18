@@ -4,8 +4,6 @@ import com.xGo.coders.xGo_to_do_list.model.dto.TasksDTO;
 import com.xGo.coders.xGo_to_do_list.model.entity.Tasks;
 import com.xGo.coders.xGo_to_do_list.repository.TasksRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
