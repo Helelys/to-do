@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 public class TasksDTO {
     private Long id;
     private String title;
-    private LocalDateTime creationDate;
+
+    private LocalDateTime creationDate = LocalDateTime.now();
     private String description;
 
     public Tasks toEntity() {
@@ -22,4 +23,6 @@ public class TasksDTO {
         task.setDescription(description);
         return task;
     }
+
+
 }

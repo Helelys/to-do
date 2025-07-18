@@ -1,5 +1,6 @@
 package com.xGo.coders.xGo_to_do_list.model.entity;
 
+import com.xGo.coders.xGo_to_do_list.model.dto.TasksDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,5 +24,14 @@ public class Tasks {
     private String title;
     private String description;
     private boolean finished = false;
-    private LocalDateTime creationDate;
+    private LocalDateTime creationDate = LocalDateTime.now();
+
+    public TasksDTO toDTO() {
+        TasksDTO dto = new TasksDTO();
+        dto.setId(id);
+        dto.setTitle(title);
+        dto.setCreationDate(creationDate);
+        dto.setDescription(description);
+        return dto;
+    }
 }
